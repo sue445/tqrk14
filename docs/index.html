@@ -12,12 +12,26 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style type="text/css">
+			.reveal h1,
+			.reveal h2,
+			.reveal h3,
+			.reveal h4,
+			.reveal h5,
+			.reveal h6 {
+				text-transform: none;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section
+					data-markdown="slides.md"
+					data-separator="^\n---\n$"
+					data-separator-vertical="^\n>>>\n$"
+				></section>
 			</div>
 		</div>
 
@@ -30,6 +44,7 @@
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
+				history: true,
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
