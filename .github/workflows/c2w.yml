@@ -8,9 +8,16 @@ env:
   IMAGE_NAME: "irbiure:latest"
   WASM_NAME: "irbicure.wasm"
 
+  # e.g. projects/123456789/locations/global/workloadIdentityPools/github-actions/providers/github-actions
+  WORKLOAD_IDENTITY_PROVIDER: "projects/573318433420/locations/global/workloadIdentityPools/tqrk14/providers/github-actions"
+
+  # e.g. terraform@GCP_PROJECT_ID.iam.gserviceaccount.com
+  SERVICE_ACCOUNT_EMAIL: "tqrk14@rubicure-playground.iam.gserviceaccount.com"
+
 permissions:
   contents: write
   pull-requests: write
+  id-token: write
 
 jobs:
   build:
@@ -20,6 +27,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - id: auth
+        name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ env.SERVICE_ACCOUNT_EMAIL }}
 
       - name: Install c2w
         run: |
@@ -32,6 +46,12 @@ jobs:
       - run: c2w ${IMAGE_NAME} docs/${WASM_NAME}
 
       - run: ls -l docs/${WASM_NAME}
+
+      - id: upload-file
+        uses: google-github-actions/upload-cloud-storage@v1
+        with:
+          path: "docs/${WASM_NAME}"
+          destination: "rubicure-playground-tqrk14/${WASM_NAME}"
 
       # FIXME: ファイルサイズが100MB超えてGitHubにcommitできないためいったんコメントアウト
       # ref. https://github.com/sue445/tqrk14/actions/runs/5302031650/jobs/9596679178
