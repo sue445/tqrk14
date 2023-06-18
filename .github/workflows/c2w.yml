@@ -58,7 +58,7 @@ jobs:
             mv $file $new_filename
             counter=$((counter+1))
           done
-          rm ${WASM_NAME}
+          rm -f ${WASM_NAME}
         working-directory: /tmp/wasm
 
       - run: ls -l /tmp/wasm/
