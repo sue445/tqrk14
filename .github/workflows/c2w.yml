@@ -41,6 +41,7 @@ jobs:
           wget https://github.com/ktock/container2wasm/releases/download/${C2W_VERSION}/container2wasm-${C2W_VERSION}-linux-amd64.tar.gz
           tar zxvf container2wasm-${C2W_VERSION}-linux-amd64.tar.gz
           sudo mv c2w /usr/local/bin/
+        working-directory: /tmp/
 
       - run: docker buildx build --platform=linux/amd64 -t ${IMAGE_NAME} .
 
