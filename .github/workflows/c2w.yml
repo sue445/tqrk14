@@ -21,6 +21,6 @@ jobs:
           tar zxvf container2wasm-${C2W_VERSION}-linux-amd64.tar.gz
           sudo mv c2w /usr/local/bin/
 
-      - run: docker buildx build --platform=linux/amd64 -t ${IMAGE_NAME}
+      - run: docker buildx build --platform=linux/amd64 -t ${IMAGE_NAME} .
 
       - run: c2w ${IMAGE_NAME} docs/${WASM_NAME}
