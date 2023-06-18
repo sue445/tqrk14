@@ -50,7 +50,7 @@ jobs:
 
       - name: Split wasm files
         run: |
-          split -b 90M ${WASM_NAME} ${WASM_BASE_NAME}
+          split -b 50M ${WASM_NAME} ${WASM_BASE_NAME}
           counter=1
           for file in $(ls ${WASM_BASE_NAME}*)
           do
