@@ -4,9 +4,10 @@ on:
   workflow_dispatch:
 
 env:
-  C2W_VERSION: "v0.3.0"
-  IMAGE_NAME: "irbiure:latest"
-  WASM_NAME: "irbicure.wasm"
+  C2W_VERSION:    "v0.3.0"
+  IMAGE_NAME:     "irbiure:latest"
+  WASM_BASE_NAME: "irbicure-"
+  WASM_NAME:      "irbicure.wasm"
 
   # e.g. projects/123456789/locations/global/workloadIdentityPools/github-actions/providers/github-actions
   WORKLOAD_IDENTITY_PROVIDER: "projects/573318433420/locations/global/workloadIdentityPools/tqrk14/providers/github-actions"
@@ -40,11 +41,27 @@ jobs:
           wget https://github.com/ktock/container2wasm/releases/download/${C2W_VERSION}/container2wasm-${C2W_VERSION}-linux-amd64.tar.gz
           tar zxvf container2wasm-${C2W_VERSION}-linux-amd64.tar.gz
           sudo mv c2w /usr/local/bin/
+        working-directory: /tmp/
 
       - run: docker buildx build --platform=linux/amd64 -t ${IMAGE_NAME} .
 
       - run: mkdir -p /tmp/wasm/
       - run: c2w ${IMAGE_NAME} /tmp/wasm/${WASM_NAME}
+      - run: ls -l /tmp/wasm/
+
+      - name: Split wasm files
+        run: |
+          split -b 50M ${WASM_NAME} ${WASM_BASE_NAME}
+          counter=0
+          for file in $(ls ${WASM_BASE_NAME}*)
+          do
+            new_filename="$(printf "%s%02d.%s" ${WASM_BASE_NAME} $counter .wasm)"
+            mv $file $new_filename
+            counter=$((counter+1))
+          done
+          rm -f ${WASM_NAME}
+        working-directory: /tmp/wasm/
+
       - run: ls -l /tmp/wasm/
 
       - id: upload-file
@@ -53,16 +70,17 @@ jobs:
           path: /tmp/wasm/
           destination: rubicure-playground-tqrk14
 
-      # FIXME: ファイルサイズが100MB超えてGitHubにcommitできないためいったんコメントアウト
-      # ref. https://github.com/sue445/tqrk14/actions/runs/5302031650/jobs/9596679178
-      # - name: Create Pull Request
-      #   uses: peter-evans/create-pull-request@v5
-      #   with:
-      #     title: "Update docs/${IMAGE_NAME}"
-      #     commit-message: "Update docs/${IMAGE_NAME}"
-      #     delete-branch: true
-      #     branch-suffix: timestamp
-      #     assignees: sue445
+      - run: rm -rf docs/wasm/
+      - run: mv /tmp/wasm docs/
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: "Update docs/wasm/"
+          commit-message: "Update docs/wasm/"
+          delete-branch: true
+          branch-suffix: timestamp
+          assignees: sue445
 
       - name: Slack Notification
         uses: lazy-actions/slatify@master
