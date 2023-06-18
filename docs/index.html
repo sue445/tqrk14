@@ -38,6 +38,11 @@
 					data-separator="^\n---\n$"
 					data-separator-vertical="^\n>>>\n$"
 				></section>
+
+				<section>
+					<h2>irbicure</h2>
+					<div class="d-inline-block" id="terminal-irbicure"></div>
+				</section>
 			</div>
 		</div>
 
@@ -58,7 +63,7 @@
 			});
 		</script>
 
-		<script src="./wasi/coi-serviceworker.js"></script>
+		<script src="./coi-serviceworker.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/xterm@5.1.0/lib/xterm.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/xterm-pty@0.9.4/index.js"></script>
 		<script>
@@ -78,5 +83,8 @@
 			const worker = new Worker(workerFileName);
 			new TtyServer(slave).start(worker);
 		</script>
+
+		<!--
+		-->
 	</body>
 </html>
