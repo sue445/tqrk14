@@ -31,14 +31,16 @@ jobs:
 
       - run: ls -l docs/${WASM_NAME}
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          title: "Update docs/${IMAGE_NAME}"
-          commit-message: "Update docs/${IMAGE_NAME}"
-          delete-branch: true
-          branch-suffix: timestamp
-          assignees: sue445
+      # FIXME: ファイルサイズが100MB超えてGitHubにcommitできないためいったんコメントアウト
+      # ref. https://github.com/sue445/tqrk14/actions/runs/5302031650/jobs/9596679178
+      # - name: Create Pull Request
+      #   uses: peter-evans/create-pull-request@v5
+      #   with:
+      #     title: "Update docs/${IMAGE_NAME}"
+      #     commit-message: "Update docs/${IMAGE_NAME}"
+      #     delete-branch: true
+      #     branch-suffix: timestamp
+      #     assignees: sue445
 
       - name: Slack Notification
         uses: lazy-actions/slatify@master
