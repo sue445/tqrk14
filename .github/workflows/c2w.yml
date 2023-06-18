@@ -1,0 +1,26 @@
+name: c2w
+
+on:
+  workflow_dispatch:
+
+env:
+  C2W_VERSION: "v0.3.0"
+  IMAGE_NAME: "irbiure:latest"
+  WASM_NAME: "irbicure.wasm"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install c2w
+        run: |
+          wget https://github.com/ktock/container2wasm/releases/download/${C2W_VERSION}/container2wasm-${C2W_VERSION}-linux-amd64.tar.gz
+          tar zxvf container2wasm-${C2W_VERSION}-linux-amd64.tar.gz
+          sudo mv c2w /usr/local/bin/
+
+      - run: docker buildx build --platform=linux/amd64 -t ${IMAGE_NAME}
+
+      - run: c2w ${IMAGE_NAME} docs/${WASM_NAME}
