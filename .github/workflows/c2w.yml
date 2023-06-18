@@ -8,6 +8,10 @@ env:
   IMAGE_NAME: "irbiure:latest"
   WASM_NAME: "irbicure.wasm"
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,6 +25,30 @@ jobs:
           tar zxvf container2wasm-${C2W_VERSION}-linux-amd64.tar.gz
           sudo mv c2w /usr/local/bin/
 
-      - run: docker buildx build --platform=linux/amd64 -t ${IMAGE_NAME}
+      - run: docker buildx build --platform=linux/amd64 -t ${IMAGE_NAME} .
 
       - run: c2w ${IMAGE_NAME} docs/${WASM_NAME}
+
+      - run: ls -l docs/${WASM_NAME}
+
+      # FIXME: ファイルサイズが100MB超えてGitHubにcommitできないためいったんコメントアウト
+      # ref. https://github.com/sue445/tqrk14/actions/runs/5302031650/jobs/9596679178
+      # - name: Create Pull Request
+      #   uses: peter-evans/create-pull-request@v5
+      #   with:
+      #     title: "Update docs/${IMAGE_NAME}"
+      #     commit-message: "Update docs/${IMAGE_NAME}"
+      #     delete-branch: true
+      #     branch-suffix: timestamp
+      #     assignees: sue445
+
+      - name: Slack Notification
+        uses: lazy-actions/slatify@master
+        if: always()
+        continue-on-error: true
+        with:
+          job_name: "*c2w*"
+          type: ${{ job.status }}
+          icon_emoji: ":octocat:"
+          url: ${{ secrets.SLACK_WEBHOOK }}
+          token: ${{ secrets.GITHUB_TOKEN }}
