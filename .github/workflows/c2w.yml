@@ -52,6 +52,7 @@ jobs:
         with:
           path: "docs/${{ env.WASM_NAME }}"
           destination: "rubicure-playground-tqrk14/${{ env.WASM_NAME }}"
+          parent: false
 
       # FIXME: ファイルサイズが100MB超えてGitHubにcommitできないためいったんコメントアウト
       # ref. https://github.com/sue445/tqrk14/actions/runs/5302031650/jobs/9596679178
