@@ -29,6 +29,8 @@ jobs:
 
       - run: c2w ${IMAGE_NAME} docs/${WASM_NAME}
 
+      - run: ls -l docs/${WASM_NAME}
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
