@@ -60,7 +60,7 @@ jobs:
             counter=$((counter+1))
           done
           rm -f ${WASM_NAME}
-        working-directory: /tmp/wasm
+        working-directory: /tmp/wasm/
 
       - run: ls -l /tmp/wasm/
 
