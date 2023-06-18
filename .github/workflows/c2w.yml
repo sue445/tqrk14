@@ -55,7 +55,7 @@ jobs:
           counter=0
           for file in $(ls ${WASM_BASE_NAME}*)
           do
-            new_filename="$(printf "%s%02d.%s" ${WASM_BASE_NAME} $counter .wasm)"
+            new_filename="$(printf "%s%02d.%s" ${WASM_BASE_NAME} $counter wasm)"
             mv $file $new_filename
             counter=$((counter+1))
           done
