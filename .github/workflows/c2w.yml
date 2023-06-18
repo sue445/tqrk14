@@ -51,7 +51,7 @@ jobs:
         uses: google-github-actions/upload-cloud-storage@v1
         with:
           path: /tmp/wasm/
-          destination: rubicure-playground-tqrk14/wasm
+          destination: rubicure-playground-tqrk14
 
       # FIXME: ファイルサイズが100MB超えてGitHubにcommitできないためいったんコメントアウト
       # ref. https://github.com/sue445/tqrk14/actions/runs/5302031650/jobs/9596679178
