@@ -43,16 +43,16 @@ jobs:
 
       - run: docker buildx build --platform=linux/amd64 -t ${IMAGE_NAME} .
 
-      - run: c2w ${IMAGE_NAME} docs/${WASM_NAME}
+      - run: mkdir -p /tmp/wasm/
+      - run: c2w ${IMAGE_NAME} /tmp/wasm/${WASM_NAME}
 
-      - run: ls -l docs/${WASM_NAME}
+      - run: ls -l /tmp/wasm/
 
       - id: upload-file
         uses: google-github-actions/upload-cloud-storage@v1
         with:
-          path: "docs/${{ env.WASM_NAME }}"
-          destination: "rubicure-playground-tqrk14/${{ env.WASM_NAME }}"
-          parent: false
+          path: "/tmp/wasm/"
+          destination: "rubicure-playground-tqrk14/wasm"
 
       # FIXME: ファイルサイズが100MB超えてGitHubにcommitできないためいったんコメントアウト
       # ref. https://github.com/sue445/tqrk14/actions/runs/5302031650/jobs/9596679178
