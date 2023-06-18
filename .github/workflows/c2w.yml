@@ -44,8 +44,7 @@ jobs:
       - run: docker buildx build --platform=linux/amd64 -t ${IMAGE_NAME} .
 
       - run: mkdir -p /tmp/wasm/
-      - run: c2w ${IMAGE_NAME} /tmp/wasm/${WASM_NAME}
-
+      - run: c2w --to-js ${IMAGE_NAME} /tmp/wasm/
       - run: ls -l /tmp/wasm/
 
       - id: upload-file
