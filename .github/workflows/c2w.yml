@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  C2W_VERSION: "v0.3.0"
+  C2W_VERSION:    "v0.3.0"
   IMAGE_NAME:     "irbiure:latest"
   WASM_BASE_NAME: "irbicure"
   WASM_NAME:      "irbicure.wasm"
