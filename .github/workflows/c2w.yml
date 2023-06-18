@@ -51,7 +51,7 @@ jobs:
       - name: Split wasm files
         run: |
           split -b 50M ${WASM_NAME} ${WASM_BASE_NAME}
-          counter=1
+          counter=0
           for file in $(ls ${WASM_BASE_NAME}*)
           do
             new_filename="$(printf "%s%02d.%s" ${WASM_BASE_NAME} $counter .wasm)"
