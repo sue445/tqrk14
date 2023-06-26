@@ -59,8 +59,7 @@ TokyuRuby会議14
 * LT王になったらこの発表スライドのアーキテクチャや裏話を基調講演で話します
 
 ---
-## rubicure-playground
-* https://github.com/sue445/rubicure-playground
+## https://github.com/sue445/rubicure-playground
 * Ruby
 * sinatra
 * Cloud Run
