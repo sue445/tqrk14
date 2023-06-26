@@ -44,7 +44,7 @@ ENTRYPOINT ["irb", "-rubicure"]
 
 ---
 ## vs https://github.com/kateinoigakukun/irb.wasm
-Dockerイメージを使ってるのでirb.wasmと根本的に違う仕組みで動いてる
+Dockerイメージを使ってるのでirb.wasmとは根本的に違う仕組みで動いてる
 
 ---
 ## Pros
