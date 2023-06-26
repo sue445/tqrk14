@@ -12,13 +12,19 @@ ENTRYPOINT ["irb", "-rubicure"]
 * LT王になったらこの発表スライドのアーキテクチャや裏話を基調講演で話します
 
 ---
+## 発表スライド
+* reveal.js: https://revealjs.com/
+  * markdownからいい感じにスライドを作れて便利
+  * 「発表スライド上でrubicureを動かす」という明確な目的があったので、HTMLでスライドを書けるreveal.jsを採用した
+* GitHub Pages: https://sue445.github.io/tqrk14/
+
+---
 ## rubicure-playground
 * https://github.com/sue445/rubicure-playground
 * Ruby
 * sinatra
 * Cloud Run
-* Ace Editor(コード入力部分)
-    * https://ace.c9.io/
+* Ace Editor: https://ace.c9.io/
 
 ---
 ## 仕組み
