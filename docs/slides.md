@@ -10,7 +10,7 @@ TokyuRuby会議14
 ![sue445](img/sue445.png)
 
 ---
-## RubyKaigi 2023 Speaker
+## RubyKaigi 2023 Speaker 💎
 ![rubykaigi2023](img/rubykaigi2023.jpg)
 
 ---
