@@ -14,8 +14,9 @@ TokyuRuby会議14
 ![rubykaigi2023](img/rubykaigi2023.jpg)
 
 ---
-## h2
-* text
+## 今日話すこと
+* これまでのrubicure
+* これからのrubicure
 
 ---
 ## h2
