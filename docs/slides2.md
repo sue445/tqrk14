@@ -13,10 +13,10 @@ ENTRYPOINT ["irb", "-rubicure"]
 
 ---
 ## 発表スライド
+* GitHub Pages: https://sue445.github.io/tqrk14/
 * reveal.js: https://revealjs.com/
   * markdownからいい感じにスライドを作れて便利
   * 「発表スライド上でrubicureを動かす」という明確な目的があったので、HTMLでスライドを書けるreveal.jsを採用した
-* GitHub Pages: https://sue445.github.io/tqrk14/
 
 ---
 ## rubicure-playground
