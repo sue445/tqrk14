@@ -5,7 +5,9 @@ TokyuRuby会議14
 
 ---
 ## 自己紹介
-* @sue445
+@sue445
+
+![sue445](img/sue445.png)
 
 ---
 ## h2
