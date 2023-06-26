@@ -69,7 +69,7 @@ TokyuRuby会議14
 
 ---
 ## 仕組み
-1. エディタに入力してサーバサイド(Cloud Runのsinatra app)にPOST
+1. エディタに任意コードを入力してサーバサイド(Cloud Runのsinatra app)にPOST
 2. POSTされたRubyのコードをsinatraで実行して、実行結果を標準出力をいい感じにキャプチャする
 3. サーバサイドから返された結果をフロントエンドで1行ずつそれっぽく表示
 
