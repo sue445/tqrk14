@@ -28,6 +28,10 @@
 				width: 100%;
 				height: 10em;
 			}
+
+			.xterm-rows {
+				text-align: left;
+			}
 		</style>
 	</head>
 	<body>
@@ -71,6 +75,15 @@
 			var workerFileName = "./wasi/irbicure-wasi.js"+location.search;
 			const xterm = new Terminal();
 			xterm.open(document.getElementById(elemId));
+
+			xterm.terminalOptions = {
+				fontSize: 32,
+				// cursorBlink: true,
+				// enableBold: true,
+				// cols: 80,
+				// rows: 40,
+				// screenKeys: true
+			};
 			const { master, slave } = openpty();
 			var termios = slave.ioctl("TCGETS");
 			termios.iflag &= ~(/*IGNBRK | BRKINT | PARMRK |*/ ISTRIP | INLCR | IGNCR | ICRNL | IXON);
