@@ -43,12 +43,13 @@ ENTRYPOINT ["irb", "-rubicure"]
 * https://ktock.github.io/container2wasm-demo/ のサンプルコードを参考にブラウザでirbを動かせるようにした
 
 ---
-## vs https://github.com/kateinoigakukun/irb.wasm
-Dockerイメージを使ってるのでirb.wasmとは根本的に違う仕組みで動いてる
+## vs ruby.wasm, irb.wasm
+* Dockerイメージを使ってるのでruby.wasmやirb.wasm( https://github.com/kateinoigakukun/irb.wasm )とは根本的に違う仕組みで動いてる
 
 ---
 ## Pros
 * Dockerイメージに好きなgemを入れて配布できる
+  * 現状ruby.wasmでは3rd party製のgemが簡単に使えないので便利〜
 
 ---
 ## Cons 1: c2wのビルドが遅い
