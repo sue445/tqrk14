@@ -1,103 +1,100 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/white.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.1.0/css/xterm.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.1.0/css/xterm.css">
 
-		<style type="text/css">
-			.reveal h1,
-			.reveal h2,
-			.reveal h3,
-			.reveal h4,
-			.reveal h5,
-			.reveal h6 {
-				text-transform: none;
-			}
-			iframe.playground {
-				width: 100%;
-				height: 10em;
-			}
+    <style type="text/css">
+      .reveal h1,
+      .reveal h2,
+      .reveal h3,
+      .reveal h4,
+      .reveal h5,
+      .reveal h6 {
+        text-transform: none;
+      }
+      iframe.playground {
+        width: 100%;
+        height: 10em;
+      }
 
-			.xterm-rows {
-				text-align: left;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section
-					data-markdown="slides.md"
-					data-separator="^\n---\n$"
-					data-separator-vertical="^\n>>>\n$"
-				></section>
+      .xterm-rows {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown="slides.md"
+          data-separator="^\n---\n$"
+          data-separator-vertical="^\n>>>\n$"
+        ></section>
 
-				<section>
-					<h2>irbicure</h2>
-					<div class="d-inline-block" id="terminal-irbicure"></div>
-				</section>
-			</div>
-		</div>
+        <section>
+          <h2>irbicure</h2>
+          <div class="d-inline-block" id="terminal-irbicure"></div>
+        </section>
+      </div>
+    </div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				history: true,
-				hash: true,
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        history: true,
+        hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
 
-		<script src="./coi-serviceworker.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/xterm@5.1.0/lib/xterm.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/xterm-pty@0.9.4/index.js"></script>
-		<script>
-			var elemId = "terminal-irbicure";
-			var workerFileName = "./wasi/irbicure-wasi.js"+location.search;
-			const xterm = new Terminal();
-			xterm.open(document.getElementById(elemId));
+    <script src="./coi-serviceworker.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.1.0/lib/xterm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-pty@0.9.4/index.js"></script>
+    <script>
+      var elemId = "terminal-irbicure";
+      var workerFileName = "./wasi/irbicure-wasi.js"+location.search;
+      const xterm = new Terminal();
+      xterm.open(document.getElementById(elemId));
 
-			xterm.terminalOptions = {
-				fontSize: 32,
-				// cursorBlink: true,
-				// enableBold: true,
-				// cols: 80,
-				// rows: 40,
-				// screenKeys: true
-			};
-			const { master, slave } = openpty();
-			var termios = slave.ioctl("TCGETS");
-			termios.iflag &= ~(/*IGNBRK | BRKINT | PARMRK |*/ ISTRIP | INLCR | IGNCR | ICRNL | IXON);
-			termios.oflag &= ~(OPOST);
-			termios.lflag &= ~(ECHO | ECHONL | ICANON | ISIG | IEXTEN);
-			//termios.cflag &= ~(CSIZE | PARENB);
-			//termios.cflag |= CS8;
-			slave.ioctl("TCSETS", new Termios(termios.iflag, termios.oflag, termios.cflag, termios.lflag, termios.cc));
-			xterm.loadAddon(master);
-			const worker = new Worker(workerFileName);
-			new TtyServer(slave).start(worker);
-		</script>
-
-		<!--
-		-->
-	</body>
+      xterm.terminalOptions = {
+        fontSize: 32,
+        // cursorBlink: true,
+        // enableBold: true,
+        // cols: 80,
+        // rows: 40,
+        // screenKeys: true
+      };
+      const { master, slave } = openpty();
+      var termios = slave.ioctl("TCGETS");
+      termios.iflag &= ~(/*IGNBRK | BRKINT | PARMRK |*/ ISTRIP | INLCR | IGNCR | ICRNL | IXON);
+      termios.oflag &= ~(OPOST);
+      termios.lflag &= ~(ECHO | ECHONL | ICANON | ISIG | IEXTEN);
+      //termios.cflag &= ~(CSIZE | PARENB);
+      //termios.cflag |= CS8;
+      slave.ioctl("TCSETS", new Termios(termios.iflag, termios.oflag, termios.cflag, termios.lflag, termios.cc));
+      xterm.loadAddon(master);
+      const worker = new Worker(workerFileName);
+      new TtyServer(slave).start(worker);
+    </script>
+  </body>
 </html>
