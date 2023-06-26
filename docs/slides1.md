@@ -1,5 +1,5 @@
 # rubicure 10th Anniversary
-[TokyuRuby会議14](https://tokyurubykaigi.github.io/tokyu14/) `#tqrk14`
+[TokyuRuby会議14](https://tokyurubykaigi.github.io/tokyu14/) #tqrk14
 
 @sue445
 
