@@ -55,15 +55,15 @@
 
 ---
 ## 特定のプリキュアを取得
-<iframe class="playground" src="" />
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?editor_height=8em&font_size=24&input=Cure.sky.human_name%0ACure.sky.precure_name%0ACure.sky.birthday%0A" />
 
 ---
-## h2
-<iframe class="playground" src="" />
+## ヒーローの出番です！
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=Cure.sky.name%0ACure.sky.transform!%0ACure.sky.name%0A" />
 
 ---
-## h2
-<iframe class="playground" src="" />
+## 完全に一致
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uOrSsajNt_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
 ## h2
