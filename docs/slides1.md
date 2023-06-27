@@ -39,22 +39,22 @@
 
 ---
 ## 現在のプリキュアを取得
-<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?editor_height=8em&font_size=24&input=puts%20Precure.now" />
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?editor_height=8em&font_size=24&input=Precure.now" />
 
 ---
 ## プリキュアのシリーズを取得
-<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?editor_height=8em&font_size=24&input=puts%20Precure.hirogaru_sky.title" />
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?editor_height=8em&font_size=24&input=Precure.hirogaru_sky.title" />
 
 ---
 ## プリキュアがオンエア中か取得
-<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?editor_height=8em&font_size=24&input=puts%20Precure.hirogaru_sky.on_air%3F(%222023-07-29%22)" />
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?editor_height=8em&font_size=24&input=Precure.hirogaru_sky.on_air%3F(%222023-07-29%22)" />
 
 ---
 ## プリキュアのシリーズに所属してるメンバーを取得
-<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?&editor_height=8em&font_size=24&input=puts%20Precure.hirogaru_sky.girls.map(%26%3Ahuman_name)%0Aputs%20Precure.hirogaru_sky.girls.count%0A" />
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?&editor_height=8em&font_size=24&input=Precure.hirogaru_sky.girls.map(%26%3Ahuman_name)%0APrecure.hirogaru_sky.girls.count%0A" />
 
 ---
-## h2
+## 特定のプリキュアを取得
 <iframe class="playground" src="" />
 
 ---
