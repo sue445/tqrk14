@@ -34,16 +34,56 @@
   * e.g. 1.1.1 -> 1.2.0
 
 ---
-## h2
-* text
+## 主要機能の紹介
+* 実際に動くのを見てもらうのが早いと思うので見せます
+
+---
+## 現在のプリキュアを取得
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=puts%20Precure.now" />
+
+---
+## プリキュアのシリーズを取得
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=puts%20Precure.hirogaru_sky.title" />
+
+---
+## プリキュアがオンエア中か取得
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=puts%20Precure.hirogaru_sky.on_air%3F(%222023-07-29%22)" />
+
+---
+## プリキュアのシリーズに所属してるメンバーを取得
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=puts%20Precure.hirogaru_sky.girls.map(%26%3Ahuman_name)%0Aputs%20Precure.hirogaru_sky.girls.count%0A" />
 
 ---
 ## h2
-* text
+<iframe class="playground" src="" />
 
 ---
 ## h2
-* text
+<iframe class="playground" src="" />
+
+---
+## h2
+<iframe class="playground" src="" />
+
+---
+## h2
+<iframe class="playground" src="" />
+
+---
+## h2
+<iframe class="playground" src="" />
+
+---
+## h2
+<iframe class="playground" src="" />
+
+---
+## h2
+<iframe class="playground" src="" />
+
+---
+## h2
+<iframe class="playground" src="" />
 
 ---
 ## h2
@@ -63,10 +103,8 @@
 
 ---
 ## playground (local)
-<iframe class="playground" src="http://localhost:9292/play?editor_height=8em&font_size=24&input=puts%201%20%2B%202">
-</iframe>
+<iframe class="playground" src="http://localhost:9292/play?editor_height=8em&font_size=24&input=puts%201%20%2B%202" />
 
 ---
 ## playground (server)
-<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?editor_height=8em&font_size=24&input=puts%201%20%2B%202">
-</iframe>
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?editor_height=8em&font_size=24&input=puts%201%20%2B%202" />
