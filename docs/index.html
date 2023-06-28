@@ -35,6 +35,15 @@
     </style>
   </head>
   <body>
+    <script>
+      // To embed YouTube
+      window.coi = {
+        coepCredentialless: () => false,
+      }
+    </script>
+
+    <script src="./coi-serviceworker.js"></script>
+
     <div class="reveal">
       <div class="slides">
         <section
@@ -77,15 +86,6 @@
         plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
       });
     </script>
-
-    <script>
-      // To embed YouTube
-      window.coi = {
-        coepCredentialless: () => false,
-      }
-    </script>
-
-    <script src="./coi-serviceworker.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.1.0/lib/xterm.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xterm-pty@0.9.4/index.js"></script>
