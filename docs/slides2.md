@@ -54,6 +54,7 @@ ENTRYPOINT ["irb", "-rubicure"]
 ---
 ## Cons 1: c2wのビルドが遅い
 * GitHub Actions上でruby:alpine(70MBくらい)のイメージをwasmに変換するのに20〜30分くらいかかる
+* v0.3.0時点でlinux版のバイナリしかないしMacでbuildしてもうまく動かなかったのでCIでbuildするのがよさそう
 
 ---
 ## Cons 2: wasmのサイズがデカい
