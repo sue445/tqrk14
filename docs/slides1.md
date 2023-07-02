@@ -112,6 +112,7 @@
 ---
 ## Color methods
 <iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=Rubicure%3A%3AGirl.colors%0APrecure.all_girls.select(%26%3Apink%3F).map(%26%3Aprecure_name)%0APrecure.all_girls.count(%26%3Apink%3F)" />
+-->
 
 ---
 ## Birthday methods
