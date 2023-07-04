@@ -60,7 +60,7 @@ https://sue445.github.io/tqrk14/
 
 ---
 ## プリキュアのシリーズに所属してるメンバーを取得
-<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?&readonly=false&editor_height=8em&font_size=24&input=Precure.hirogaru_sky.girls.map(%26%3Ahuman_name)%0APrecure.hirogaru_sky.girls.count%0A" />
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?&readonly=false&editor_height=8em&font_size=24&input=Precure.hirogaru_sky.members.map(%26%3Ahuman_name)%0APrecure.hirogaru_sky.members.count%0A" />
 
 ---
 ## 特定のプリキュアを取得
@@ -88,7 +88,7 @@ https://sue445.github.io/tqrk14/
 
 ---
 ## 全プリキュア（キュアエコー含む）
-<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=Precure.all_girls.count%0A" />
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=Precure.all_members.count%0A" />
 
 ---
 ## プリキュアオールスターズ（映画のやつ）
@@ -120,15 +120,15 @@ https://sue445.github.io/tqrk14/
 
 ---
 ## Color methods
-<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=Rubicure%3A%3AGirl.colors%0APrecure.all_girls.select(%26%3Apink%3F).map(%26%3Aprecure_name)%0APrecure.all_girls.count(%26%3Apink%3F)" />
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=Rubicure%3A%3AGirl.colors%0APrecure.all_members.select(%26%3Apink%3F).map(%26%3Aprecure_name)%0APrecure.all_members.count(%26%3Apink%3F)" />
 
 ---
 ## Birthday methods
-<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=Precure.all_girls.select(%26%3Ahave_birthday%3F).count%0APrecure.all_girls.select(%26%3Ahave_birthday%3F).sort_by%20%7B%20%7Cgirl%7C%20Date.parse(girl.birthday)%20%7D.map%7B%20%7Cgirl%7C%20%5Bgirl.birthday%2C%20girl.human_name%5D%20%20%7D%0A" />
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=Precure.all_members.select(%26%3Ahave_birthday%3F).count%0APrecure.all_members.select(%26%3Ahave_birthday%3F).sort_by%20%7B%20%7Cgirl%7C%20Date.parse(girl.birthday)%20%7D.map%7B%20%7Cgirl%7C%20%5Bgirl.birthday%2C%20girl.human_name%5D%20%20%7D%0A" />
 
 ---
 ## 平成プリキュア vs 令和プリキュア
-<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=Cure.star.heisei%3F%0ACure.cosmo.reiwa%3F%0APrecure.all_girls.count(%26%3Aheisei%3F)%0APrecure.all_girls.count(%26%3Areiwa%3F)" />
+<iframe class="playground" src="https://rubicure-playground-lczknh2o4a-an.a.run.app/play?readonly=false&editor_height=8em&font_size=24&input=Cure.star.heisei%3F%0ACure.cosmo.reiwa%3F%0APrecure.all_members.count(%26%3Aheisei%3F)%0APrecure.all_members.count(%26%3Areiwa%3F)" />
 
 ---
 ## h2
