@@ -46,6 +46,7 @@ ENTRYPOINT ["irb", "-rubicure"]
 ## Pros
 * Dockerイメージに好きなgemを入れて配布できる
   * 現状ruby.wasmでは3rd party製のgemが簡単に使えないので便利〜
+  * ref. https://rubykaigi.org/2023/presentations/ledsun.html#day3
 
 ---
 ## Cons 1: c2wのビルドが遅い
