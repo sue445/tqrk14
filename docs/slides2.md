@@ -51,13 +51,14 @@ ENTRYPOINT ["irb", "-rubicure"]
 ---
 ## Cons 1: c2wのビルドが遅い
 * GitHub Actions上でruby:alpine(70MBくらい)のイメージをwasmに変換するのに20〜30分くらいかかる
-* v0.3.0時点でlinux版のバイナリしかないしMacでbuildしてもうまく動かなかったのでCIでbuildするのがよさそう
+  * docker buildは一瞬で終わる
+* v0.3.0時点でlinux版のバイナリしかないしMacでbuildしてもうまく動かなかったのでCI上のLinuxのRunnerでbuildするのがよさそう
 
 ---
 ## Cons 2: wasmのサイズがデカい
 * ruby:alpine(70MBくらい)だとwasmは170MBくらい
-* 100MB超えるとGitHubにコミットできなくて地味に面倒
-* このファイルサイズをブラウザでDLさせるのもつらいので50MBずつに分割コミットしている
+* １ファイル100MB超えるとGitHubにpushできなくて地味に面倒
+* このファイルサイズをブラウザで一気にDLさせるのもつらいので50MBずつに分割コミットしている
 * irbicureでは「docker build -> c2w -> wasmをファイル分割 -> PR投げる」をGitHub Actionsで実装した
 
 ---
