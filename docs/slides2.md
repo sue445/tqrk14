@@ -8,10 +8,6 @@ ENTRYPOINT ["irb", "-rubicure"]
 ```
 
 ---
-# ここから先は基調講演用
-* LT王になったらこの発表スライドのアーキテクチャや裏話を基調講演で話します
-
----
 ## 発表スライド
 * GitHub Pages: https://sue445.github.io/tqrk14/
 * reveal.js: https://revealjs.com/
