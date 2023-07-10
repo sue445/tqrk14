@@ -40,9 +40,13 @@ https://sue445.github.io/tqrk14/
 * rubicure uses **Semantic Cure Versioning** ❤️
   * https://github.com/sue445/rubicure#versioning-policy
 * 基本的には普通のSemantic Versioningと同じだが、新しいプリキュアシリーズの追加の時はMinor versionを行う
-  * v3.1.0: Add DeliciousParty❤️Precure
-  * v3.2.0.rc1: Add Hirogaru Sky Precure (exclude Cure Butterfly)
-  * v3.2.0: Add Cure Butterfly 🦋
+
+---
+### 毎年TVの本放送で追加キュア除いて全員揃った日にgemをリリースしている
+* v2.1.0(2021/05/28): Add Tropical-Rouge! Precure 🌊
+* v3.1.0(2022/04/24): Add DeliciousParty❤️Precure
+* v3.2.0.rc1(2023/05/026): Add Hirogaru Sky Precure (exclude Cure Butterfly)
+* v3.2.0(2023/06/04): Add Cure Butterfly 🦋
 
 ---
 ## 主要機能の紹介
