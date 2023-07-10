@@ -45,7 +45,7 @@ https://sue445.github.io/tqrk14/
 ### 毎年TVの本放送で追加キュア除いて全員揃った直後にgemをリリースしている
 * v2.1.0(2021/05/28): Add Tropical-Rouge! Precure 🌊
 * v3.1.0(2022/04/24): Add DeliciousParty❤️Precure
-* v3.2.0.rc1(2023/05/026): Add Hirogaru Sky Precure (exclude Cure Butterfly)
+* v3.2.0.rc1(2023/05/26): Add Hirogaru Sky Precure (exclude Cure Butterfly)
 * v3.2.0(2023/06/04): Add Cure Butterfly 🦋
 
 ---
