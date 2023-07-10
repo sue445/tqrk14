@@ -40,7 +40,9 @@ https://sue445.github.io/tqrk14/
 * rubicure uses **Semantic Cure Versioning** ❤️
   * https://github.com/sue445/rubicure#versioning-policy
 * 基本的には普通のSemantic Versioningと同じだが、新しいプリキュアシリーズの追加の時はMinor versionを行う
-  * e.g. 1.1.1 -> 1.2.0
+  * v3.1.0: Add DeliciousParty❤️Precure
+  * v3.2.0.rc1: Add Hirogaru Sky Precure (exclude Cure Butterfly)
+  * v3.2.0: Add Cure Butterfly 🦋
 
 ---
 ## 主要機能の紹介
