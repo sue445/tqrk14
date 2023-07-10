@@ -8,6 +8,9 @@ ENTRYPOINT ["irb", "-rubicure"]
 ```
 
 ---
+# 今回のアーキテクチャについて(基調講演用)
+
+---
 ## 発表スライド
 * GitHub Pages: https://sue445.github.io/tqrk14/
 * reveal.js: https://revealjs.com/
