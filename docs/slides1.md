@@ -36,6 +36,13 @@ https://sue445.github.io/tqrk14/
 * 今年10周年 🎉
 
 ---
+## 全部で97 tagsある
+```bash
+$ git tag | wc -l
+      97
+```
+
+---
 ## Versioning Policy
 * rubicure uses **Semantic Cure Versioning** ❤️
   * https://github.com/sue445/rubicure#versioning-policy
