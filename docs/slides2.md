@@ -8,6 +8,15 @@ ENTRYPOINT ["irb", "-rubicure"]
 ```
 
 ---
+## 今後の展望 (v4)
+* Girlを使うのをやめる
+  * `#girls` -> `#members`
+  * `Precure.all_girls` -> `Precure.all_members`
+  * `Rubicure::Girl` -> `Rubicure::Human` (?)
+* 理由：今期のプリキュアで男性プリキュアが出てきたため
+* https://github.com/sue445/rubicure/issues/284
+
+---
 # 【基調講演用】今回のアーキテクチャについて
 だいたい10枚くらい
 
