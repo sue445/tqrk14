@@ -1,6 +1,6 @@
 ## Dockerfile
 ```dockerfile
-FROM rubylang/ruby:master-nightly-focal
+FROM ruby:3.3-rc-alpine
 
 RUN gem install --no-doc rubicure
 
