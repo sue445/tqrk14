@@ -31,6 +31,9 @@ jobs:
 
       - run: docker buildx build --platform=linux/amd64 -t ${IMAGE_NAME} .
 
+      - name: Test image
+        run: docker run --rm --entrypoint "" ${IMAGE_NAME} ruby --version
+
       - run: mkdir -p /tmp/wasm/
       - run: c2w ${IMAGE_NAME} /tmp/wasm/${WASM_NAME}
       - run: ls -l /tmp/wasm/
