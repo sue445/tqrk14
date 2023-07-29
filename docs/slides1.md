@@ -32,7 +32,7 @@ https://sue445.github.io/tqrk14/
 * https://github.com/sue445/rubicure
 * プリキュアのRuby実装
 * 2013/12/15: v0.0.1 🎂
-* 2023/06/04: v3.2.1 (Latest)
+* 2023/06/05: v3.2.2 (Latest)
 * 今年10周年 🎉
 
 ---
